@@ -1,0 +1,56 @@
+<web-app>
+
+    <context-param>
+        <param-name>breed</param-name>
+        <param-value>Pit Bull</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>SelectBeer</servlet-name>
+        <servlet-class>com.example.web.BeerSelect</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectBeer</servlet-name>
+        <url-pattern>/SelectBeer.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListenerTester</servlet-name>
+        <servlet-class>com.example.web.ListenerTester</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListenerTester</servlet-name>
+        <url-pattern>/ListenTest.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CycleOne</servlet-name>
+        <servlet-class>com.example.session.SessionCycleOne</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CycleOne</servlet-name>
+        <url-pattern>/CycleOne.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CycleTwo</servlet-name>
+        <servlet-class>com.example.session.SessionCycleTwo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CycleTwo</servlet-name>
+        <url-pattern>/CycleTwo.do</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>com.example.listeners.MyContextListener</listener-class>
+        <listener-class>com.example.listeners.MySecondContextListener</listener-class>
+        <listener-class>com.example.listeners.MyServletRequestListener</listener-class>
+        <listener-class>com.example.listeners.MyHttpSessionListener</listener-class>
+        <listener-class>com.example.listeners.MySecondHttpSessionListener</listener-class>
+        <listener-class>com.example.listeners.MyHttpSessionAttributeListener</listener-class>
+    </listener>
+
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+</web-app>
